@@ -1,0 +1,12 @@
+const reverse = (num) => {
+  let rev_num = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    rev_num = rev_num * 10 + rem;
+    num = Math.floor(num / 10);
+  }
+  return rev_num;
+}
+let num = 64223;
+let rev_num = reverse(num);
+console.log("The reverse of a given number:" + rev_num);
