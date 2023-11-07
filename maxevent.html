@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxEvent</title>
+    <script>
+        function MaxEvent(){
+            let a=Number(document.getElementById("event1").value);
+            let b=Number(document.getElementById("event2").value);
+            let c=Number(document.getElementById("event3").value);
+            let d=Number(document.getElementById("event4").value);
+            let result= Math.max(a,b,c,d);
+            if(result==a){
+                document.getElementById('result').innerHTML=`Maximum Number of Events occured in this month is: BirthdayParty`; 
+            }
+            else if(result==b){
+                document.getElementById('result').innerHTML=`Maximum Number of Events occured in this month is Engagement party `;
+            }
+            else if(result==c){
+                document.getElementById('result').innerHTML=`Maximum Number of Events occured in this month is corporate`;
+            }
+            else{
+                document.getElementById('result').innerHTML=`Maximum Number of Events occured in this month is Social Gathering`;
+            }
+        }
+    </script>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            background-color: rgb(237, 237, 82);
+            width: 50%;
+            margin-left: 28%;
+        }
+        #result{
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 3px 2px 5px rgb(255, 255, 255);
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">Event count for a Month</h2>
+    <div class="container">
+        <span><label>Birthday Party Event&emsp;&emsp;:</label>
+        <input type="number" id="event1"> </span><br><br>
+         <span><label>Engagement parties event:</label>
+        <input type="number" id="event2"></span> <br><br>
+        <span><label>Corporate event&emsp;&emsp;&emsp;&emsp;:</label>
+        <input type="number" id="event3"></span><br><br>
+        <span><label>Social Gathering event&emsp;:</label>
+        <input type="number" id="event4"></span><br><br>
+        <button onclick="MaxEvent()">Submit</button>
+        <span><div id="result"></div></span>
+    </div>
+</body>
+</html>

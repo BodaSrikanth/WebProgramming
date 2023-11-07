@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        h2{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .operations{
+            display: flex;
+            justify-content: space-between;
+        }
+        #result{
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px gray;
+            padding: 6px;
+        }
+        #value1{
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            padding: 6px;
+        }
+        #value2{
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">A simple Javascript Calculator</h2>
+    <div class="container">
+        <span><label for="value1">Enter Value 1:</label>
+        <input id="value1" type="number"></span>
+        <span><label for="value2">Enter value 2:</label>
+        <input id="value2" type="number"></span>
+        <div class="operations">
+            <button onclick="add()">Add</button>
+            <button onclick="sub()">Subtract</button>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Divide</button>
+        </div><br><br>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function add() {
+            const value1 = parseFloat(document.getElementById('value1').value);
+            const value2 = parseFloat(document.getElementById('value2').value);
+            const result = value1 + value2;
+            document.getElementById('result').innerHTML = ` The addition of ${value1} and ${value2} is ${result}`;
+        }
+
+        function sub() {
+            const value1 = parseFloat(document.getElementById('value1').value);
+            const value2 = parseFloat(document.getElementById('value2').value);
+            const result = value1 - value2;
+            document.getElementById('result').innerHTML = ` The subtraction of ${value1} and ${value2} is ${result}`;
+        }
+
+        function mul() {
+            const value1 = parseFloat(document.getElementById('value1').value);
+            const value2 = parseFloat(document.getElementById('value2').value);
+            const result = value1 * value2;
+            document.getElementById('result').innerHTML = ` The multiplication of ${value1} and ${value2} is ${result}`;
+        }
+
+        function div() {
+            const value1 = parseFloat(document.getElementById('value1').value);
+            const value2 = parseFloat(document.getElementById('value2').value);
+            if (value2 !== 0) {
+                const result = value1 / value2;
+                document.getElementById('result').innerHTML =` The division of ${value1} and ${value2} is ${result}`;
+            } else {
+                document.getElementById('result').innerHTML = "Cannot divide by zero!";
+            }
+        }
+    </script>
+</body>
+</html>

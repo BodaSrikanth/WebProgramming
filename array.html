@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        #result {
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 3px 2px 5px rgb(48, 45, 45);
+            padding: 4px;
+        }
+        #input{
+            padding: 6px;
+            border-radius: 5px;
+            border: 1px solid darkgray;
+        }
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">Event List</h2>
+    <div class="container">
+            <span><label for="input">Enter the Event:</label><input type="text" id="input" placeholder="Enter an event"></span>
+            <div class="operations">
+                <button id="push" onclick="addEvent()">Push</button>
+                <button id="pop" onclick="removeEvent()">Pop</button>
+                <button id="display" onclick="displayEvents()">Display</button>
+            </div>
+             <div id="result"></div>
+    </div>
+
+    <script>
+        const eventArray = [];
+
+        function addEvent() {
+            const eventInput = document.getElementById('input').value;
+            if (eventInput.trim() !== '') {
+                eventArray.push(eventInput);
+                document.getElementById('result').innerHTML = `Added successfully`;
+                document.getElementById('result').className = 'success'; 
+                document.getElementById('input').value = '';
+            }
+        }
+
+        function removeEvent() {
+            if (eventArray.length > 0) {
+                eventArray.pop();
+                document.getElementById('result').innerHTML = `Removed successfully`;
+                document.getElementById('result').className = 'error';
+            } else {
+                document.getElementById('result').innerHTML = `Event array is empty`;
+                document.getElementById('result').className = 'error';
+            }
+        }
+
+        function displayEvents() {
+            const resultDiv = document.getElementById('result');
+            if (eventArray.length === 0) {
+                resultDiv.innerHTML = 'Event array is empty';
+                document.getElementById('result').className = 'error';
+
+            }  else {
+                const eventList = document.createElement('ul');
+                eventArray.forEach((event) => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = event;
+                    eventList.appendChild(listItem);
+                });
+                resultDiv.innerHTML = '';
+                resultDiv.appendChild(eventList);
+                resultDiv.className = 'success';
+            }
+        }
+    </script>
+</body>
+</html>
