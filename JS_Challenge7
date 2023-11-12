@@ -1,0 +1,15 @@
+const pairOfNum=(a,b)=>{
+  let sum=a+b;
+  if((sum==50) || (a==50) || (b==50) ){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+let y=pairOfNum(23,27);
+console.log("when sum=50 for pair of numbers:",y);
+let z=pairOfNum(23,50);
+console.log("when one number=50 and sum!=50 for a pair of numbers:",z);
+let x=pairOfNum(34,78);
+console.log("when one number!=50 and sum!=50 for a pair of numbers:",x);
