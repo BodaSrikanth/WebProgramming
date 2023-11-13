@@ -1,0 +1,24 @@
+const getSubsets=(arr, length)=>{
+  const result = [];
+
+  const generateSubsets=(subset, start)=>{
+      if (subset.length === length) {
+          result.push([...subset]);
+          return;
+      }
+
+      for (let i = start; i < arr.length; i++) {
+          subset.push(arr[i]);
+          generateSubsets(subset, i + 1);
+          subset.pop();
+      }
+  }
+
+  generateSubsets([], 0);
+
+  return result;
+}
+let sampleArray = [1, 2, 3];
+let subsetLength = 2;
+let subsets = getSubsets(sampleArray, subsetLength);
+console.log(subsets);
