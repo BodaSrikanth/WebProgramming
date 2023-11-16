@@ -1,0 +1,7 @@
+const student={
+  name:"Rahul Dravid",
+  sclass:"IX",
+  rollno:02
+}
+console.log(Object.keys(student));
+console.log(Object.values(student));
