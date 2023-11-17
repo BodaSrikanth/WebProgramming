@@ -1,0 +1,8 @@
+const showClock=()=>{
+  let a=new Date();
+  let h=a.getHours().toString();
+  let m=a.getMinutes().toString();
+  let s=a.getSeconds().toString();
+  console.log(h+":"+m+":"+s);
+}
+setInterval(showClock,1000);
