@@ -1,0 +1,18 @@
+const memoizationAdd=()=>{
+  const cache={};
+  return (num)=>{
+    if(num in cache){
+      console.log("Fetching from cache");
+      return cache[num];
+    }else{
+      console.log("Calculating value");
+      let value=num+15;
+      cache[num]=value;
+      return value;
+    }
+    
+  };
+}
+const newMemoAdd=memoizationAdd();
+console.log(newMemoAdd(15));
+console.log(newMemoAdd(15));
