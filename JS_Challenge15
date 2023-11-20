@@ -1,0 +1,10 @@
+const string_chop=(str,n=str.length)=>{
+  let res=[];
+  for(let i=0;i<str.length;i+=n){
+    res.push(str.slice(i,i+n));
+  }
+  return res;
+}
+console.log(string_chop('Scaler'));
+console.log(string_chop('Scaler',2));
+console.log(string_chop('Scaler',3));
