@@ -1,0 +1,20 @@
+const prompt=require('prompt-sync')();
+let a=Math.floor(Math.random()*100);
+let input;
+let chances=0;
+while(input!=a){
+  input=prompt("Enter the number:");
+  if(input<a){
+    console.log("Try the greater number!");
+    chances++;
+  }
+  else if(input>a){
+    console.log("Try the smaller number!");
+     chances++;
+  }
+  else{
+    console.log(`you had guessed the number and you had taken
+      ${chances} to guess the number`);
+    break;
+  }
+}
