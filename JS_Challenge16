@@ -1,0 +1,9 @@
+const sumArray=(arr)=>{
+  let result=arr.reduce((h1,h2)=>{
+      return h1+h2;
+  });
+  return result;
+}
+let arr=[12,89,34,78,90];
+let y=sumArray(arr);
+console.log("Sum of all numbers in the array:"+y);
