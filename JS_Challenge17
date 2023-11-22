@@ -1,0 +1,8 @@
+const filterOutOdd=(arr)=>{
+  let result=arr.filter((num)=>{
+    return (num%2==0);
+  });
+  return result;
+}
+let arr=[23,78,900,73,29];
+console.log("Even numbers are:"+filterOutOdd(arr));
