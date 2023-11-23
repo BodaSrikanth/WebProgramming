@@ -1,0 +1,6 @@
+const doubleValues=(arr)=>{
+  let result=arr.map(value=>value+value);
+    return result;
+}
+let arr=[23,89,67,90,99];
+console.log("The elements are:"+doubleValues(arr));
