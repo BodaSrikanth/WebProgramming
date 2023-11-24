@@ -1,0 +1,7 @@
+const allPositive=(value)=>{
+  return value>=0;
+}
+const arr1=[12,89,78,34,56];
+const arr2=[24,48,-72,-96,120];
+console.log("Status in array of numbers:"+arr1.every(allPositive));
+console.log("Status in array of numbers:"+arr2.every(allPositive));
