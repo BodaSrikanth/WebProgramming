@@ -1,0 +1,7 @@
+const findFirstNegative=(value)=>{
+  return value<=0;
+}
+let arr1=[1,18,-25,33,-45,-63];
+let arr2=[17,34,51,68,85]
+console.log("First Negative number:"+arr1.find(findFirstNegative));
+console.log("First Negative number:"+arr2.find(findFirstNegative));
