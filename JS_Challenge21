@@ -1,0 +1,15 @@
+async function loopFun(arr,asynFun){
+  for(let ele of arr){
+    await asynFun(ele);
+  }
+}
+
+const asyncFun=(ele)=>{
+  return new Promise(resolve=>setTimeout(()=>{
+    console.log(ele);
+    resolve();
+  },1000));
+}
+
+const arr=[35,70,105,140,175];
+loopFun(arr,asyncFun);
