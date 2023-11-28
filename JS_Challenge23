@@ -1,0 +1,11 @@
+function counter(){
+  let count=0;
+  function incrementFun(){
+    return ++count;
+  }
+  return incrementFun;
+}
+let count=counter();
+console.log(count());
+console.log(count());
+console.log(count());
