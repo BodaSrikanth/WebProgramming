@@ -1,0 +1,18 @@
+const  getData=()=>{
+  const url1="https://randomuser.me/api/";
+  const url2="https://swapi.dev/api/people";
+  return fetch(url1)
+    .then(value1=>value1.json())
+    .then(data1=>{
+          return fetch(url2)
+         .then((value2)=>value2.json())
+         .then(data2=>{
+           const result={
+             users:data1.results,
+             people:data2.results
+           };
+          return result;
+     });
+  });
+}
+getData().then(data=>console.log(data));
