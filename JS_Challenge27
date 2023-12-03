@@ -1,0 +1,10 @@
+function* generatorFun(start, end) {
+  let i=start;
+  while(i<=end){
+    yield i++;
+  }
+}
+const gen = generatorFun(15,20);
+for(let a of gen){
+  console.log(a);
+}
