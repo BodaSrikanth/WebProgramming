@@ -1,0 +1,18 @@
+const raceWithTimeOut=(promises,timeout)=>{
+  const timeOutPromise=new Promise((_,reject)=>{
+    setTimeout(()=>{
+      reject(new Error("Timeout exceeded"));
+    },timeout);
+  });
+  return Promise.race([...promises,timeOutPromise]);
+}
+const promise1=new Promise(resolve=> setTimeout(()=>resolve(
+  "Promise1 is resolved",500
+)));
+const promise2=new Promise(resolve=> setTimeout(()=>resolve(
+  "Promise2 is resolved",1000
+)));
+
+raceWithTimeOut([promise1,promise2],900)
+  .then(result=>console.log(result))
+  .catch(error=>console.error(error.message));
