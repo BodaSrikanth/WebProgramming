@@ -1,0 +1,15 @@
+const proxy=(obj)=>{
+   return new Proxy(obj,{
+    get:function(target,property){
+       console.log("Property accessed:",property);
+       return target[property];
+    }
+   });
+}
+const employee={
+    empId:4518,
+    empName:"Steve Jobs"
+};
+const proxyObj=proxy(employee);
+console.log(proxyObj.empId);
+console.log(proxyObj.empName);
