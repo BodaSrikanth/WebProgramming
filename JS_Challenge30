@@ -1,0 +1,23 @@
+const throttle=(func, interval)=>{
+  let lastCall = 0;
+  return function(...args) {
+    const current = Date.now();
+    if (current - lastCall >= interval) {
+      func.apply(this, args);
+      lastCall = current;
+    } else {
+      console.log("Function is being throttled. Wait for the interval to pass.");
+    }
+  };
+}
+const callFunction=(arg)=>{
+  console.log(`Function called with argument: ${arg}`);
+}
+const throttledFunction = throttle(callFunction, 2000);
+throttledFunction("First call"); 
+setTimeout(() => {
+  throttledFunction("Second call"); 
+}, 1000);
+setTimeout(() => {
+  throttledFunction("Third call");  
+}, 2000);
